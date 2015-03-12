@@ -1,0 +1,58 @@
+<html>
+    <head>
+<<<<<<< HEAD
+        <script src=<?php echo base_url('../static/js/google_jquery.js') ; ?> ></script>
+        <link rel="stylesheet" href=<?php echo base_url('../static/css/bootstrap.min.css') ; ?> type="text/css"/>
+        <script type="text/javascript"  src=<?php echo base_url('../static/js/jquery.js') ; ?> ></script>
+        <script type="text/javascript"  src=<?php echo base_url('../static/js/bootstrap.min.js') ; ?>  ></script>
+=======
+        <script src="<?php echo base_url('../static/js/google_jquery.js') ; ?>" ></script>
+        <link rel="stylesheet" href="<?php echo base_url('../static/css/bootstrap.min.css'); ?>" type="text/css"/>
+        <script type="text/javascript"  src="<?php echo base_url('../static/js/jquery.js'); ?>" ></script>
+        <script type="text/javascript"  src="<?php echo base_url('../static/js/bootstrap.min.js'); ?>"  ></script>
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+    </head>
+    <body>
+
+        <div class="container">
+
+            <ul class="nav nav-bar nav-justified">
+
+<<<<<<< HEAD
+            <li class="active"> <a  href="<?php echo base_url('home'); ?>"><span class="glyphicon glyphicon-usd"></span>Budget </a> </li>
+            <li><a href="<?php echo base_url('transactions'); ?>"><span class="glyphicon glyphicon-refresh"></span>Transactions </a> </li>
+            <li> <a href="<?php echo base_url('search'); ?>"><span class="glyphicon glyphicon-search"></span>Search</a> </li>
+            <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-wrench"></span>Settings<b class="caret"></b> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo base_url('settings/change_password'); ?>">change password</a></li>
+                    <li><a href="<?php echo base_url('settings/deactivate_account'); ?>">Deactivate account</a></li>
+                    <li><a href="<?php echo base_url('home/logout'); ?>">Logout</a></li>
+                </ul>
+            </li>
+=======
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+
+                <li class="active"> <a  href="<?php echo base_url('home'); ?>"><span class="glyphicon glyphicon-usd"></span>Budget </a> </li>
+                <li><a  href="<?php echo base_url('transactions'); ?>"><span class="glyphicon glyphicon-refresh"></span>Transactions </a> </li>
+                <li> <a   href="<?php echo base_url('search'); ?>"><span class="glyphicon glyphicon-search"></span>Search</a> </li>
+                <li class="dropdown"> <a  class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="   glyphicon glyphicon-wrench"></span>Settings<b class="caret"></b> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url('settings/change_password'); ?>">change password</a></li>
+                        <li><a href="<?php echo base_url('settings/deactivate_account'); ?>">Deactivate account</a></li>
+                        <li><a href="<?php echo base_url('home/logout'); ?>">Logout</a></li>
+                    </ul>
+                </li>
+
+
+
+
+            </ul>
+
+        </div>
+
+    </body>
+</html>
+
+
+
+

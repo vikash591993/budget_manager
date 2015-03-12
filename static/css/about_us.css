@@ -1,0 +1,90 @@
+.carousel-container
+{
+    width : 100% ;
+    padding-left:  0px ;
+    padding-right: 0px ;
+
+}
+
+.paragraph-contents
+{
+    font-size : 25px ;
+}
+
+.carousel-caption {
+
+    max-width: 800px;
+    padding: 0 20px;
+    margin:0 auto;
+    margin-top: 100px;
+    text-align:center;
+}
+
+.profiles-page{
+
+    max-width: 1000px ;
+    margin-top: 40px ;
+
+}
+
+.profile-images
+{
+    width: 80% ;
+    height: 130px;
+
+}
+.carousel-header
+{
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px #c3c3c3;
+    color: #ff0000;
+}
+
+.description
+{
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px #ff0000;
+    font-style: italic;
+    color: black;
+    font-size: 20px;
+}
+.description-individual
+{
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px #000000;
+    font-size: large;
+}
+
+.bigicon
+{
+    font-size : 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-left: 0px ;
+    margin-right: 0px ;
+}
+.footer{
+    margin-left: 0px ;
+    margin-right : 0px ;
+    margin-right : 0px ;
+}
+.footer-icon{
+    padding-left: 40px ;
+}
+.last-note
+{
+    padding-left: 20px ;
+    font-size: 15px ;
+    float : right ;
+}
+.navbar-name{
+     font-family: 'Montserrat', sans-serif;
+}
+.well{
+    margin-bottom: 0px ;
+}
+.about-us-image
+{
+    height :2000px ;
+    max-height: 2000px ;
+}

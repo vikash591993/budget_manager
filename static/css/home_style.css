@@ -1,0 +1,95 @@
+#name{
+    margin-top: 14px;
+    color: rgb(87, 81, 81);
+}
+.table-striped>tbody>tr:nth-child(odd)>th{
+    background-color: lightblue;
+    
+}
+dl{
+    width:300px;
+    text-align: center;
+}
+dt{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 2em;
+    background-color: #e3e3e3;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    font-family: sans-serif;
+
+}
+dd{
+    font-family: sans-serif;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 2em;
+    background-color: #FAF8F8;
+}
+h1{
+    margin-left: 127px; 
+    margin-top: 0px;
+}
+h3{
+    margin-left: 127px;
+   color : black;
+   margin-bottom: 0px;
+   margin-top: 0px;
+}
+table,th,tr{
+    background-color: ghostwhite;
+}
+
+rect{
+    background-color: #ffffff;
+    opacity: 0.2;
+}
+
+#loading{
+    width: 500px;
+    margin: auto;
+    margin-top: 70px;
+}
+#para1{
+    font-size: 35px;
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px #FAF8F8;
+    color: #c3c3c3;
+    margin-left: 500px;
+    margin: auto;
+    width: 500px;
+}
+text{
+    font-size: 15px;
+    color: #003dff;
+}
+.row{
+    margin-left:0px;
+    margin-right: 0px;
+}
+
+.home-carousel
+{
+    height : 400px ;
+    max-height: 400px ;
+    width : 100% ;
+}
+.last-transactions-header{
+    padding-left: 20px ;
+}
+.last-transactions-table
+{
+    box-shadow: 10px 10px 5px #888888;
+    opacity : 0.6 ;
+}
+.div_style {
+background-color: white;
+border-radius: 5px;
+width: 100%;
+}
+#pwd{
+    color: white;
+}

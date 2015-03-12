@@ -1,0 +1,168 @@
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Home extends CI_Controller {
+
+    public function __construct() {
+        parent::__construct();
+        if (!isset($_SESSION['user_id'])) {
+            session_start();
+        }
+        $this->load->database();
+    }
+
+    public function index() {
+        if (!isset($_SESSION['user_id'])) {
+            $this->load->view('login_view');
+        } else {
+            $user_id = $_SESSION['user_id'];
+            $this->load->model('user_model');
+            $data = $this->user_model->get_user($user_id);
+            foreach ($data as $row) {
+                $name = $row->name;
+                $bank_money = $row->cash_in_bank;
+                $hand_money = $row->cash_in_hand;
+                $starting_balance = $row->starting_balance;
+                $id = $row->id;
+            }
+            $this->load->model('transactions_model');
+<<<<<<< HEAD
+            $flag = 0;
+=======
+
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+            $present_month = date("Y-m-d");
+            $previous_month = date('Y-m-d', strtotime(' -1 month'));
+
+            $present_year = date("Y-m-d");
+            $previous_year = date("Y-m-d", strtotime('-1 year'));
+
+            $yearly_total = $this->transactions_model->yearly_transactions($present_year, $previous_year, $user_id);
+
+            $monthly_total = $this->transactions_model->monthly_transactions($present_month, $previous_month, $user_id);
+
+            $total_expense = $this->transactions_model->total_expense($user_id);
+            $money_left = $hand_money + $bank_money;
+            $overall_money = $money_left + $total_expense;
+<<<<<<< HEAD
+            if (($hand_money < 0) || ($bank_money < 0)) {
+                $flag = 1;
+            }
+=======
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+            $approx_progress_value = ($total_expense / $overall_money) * 100;
+            $progress_value = round($approx_progress_value);
+            $user_array = array(
+                'name' => $name,
+                'cash_in_bank' => $bank_money,
+                'cash_in_hand' => $hand_money,
+                'starting_balance' => $bank_money + $hand_money,
+                'monthly_sum' => $monthly_total,
+                'yearly_sum' => $yearly_total,
+                'total_expense' => $total_expense,
+                'progress_value' => $progress_value,
+                'flag' => $flag
+            );
+            $this->load->view('navbar');
+            $this->load->view('home_view', $user_array);
+        }
+    }
+
+    public function login_submit() {
+        $post_input = $this->input->post();
+        $email = $post_input['email'];
+        $password = $post_input['password'];
+        $this->load->model('user_model');
+        $data = $this->user_model->verify_user($email, $password);
+        if (!$data) {
+            echo "Not Registered!!!!";
+            echo "Click here to <a href =" . base_url('home/index') . ">Login</a>";
+            exit();
+        }
+        foreach ($data as $row) {
+            $name = $row->name;
+            $left_money = $row->cash_in_bank;
+            $hand_money = $row->cash_in_hand;
+            $starting_balance = $row->starting_balance;
+            $id = $row->id;
+        }
+        $user_array = array(
+            'name' => $name,
+            'cash_in_bank' => $left_money,
+            'cash_in_hand' => $hand_money,
+            'starting_balance' => $starting_balance
+            
+        );
+        $_SESSION['user_id'] = $id;
+        $url = base_url('home');
+        header("Location:$url");
+    }
+
+    public function register() {
+        $this->load->view('register_view');
+    }
+
+    public function register_submit() {
+        $nameErr=$emailErr="";
+        $this->load->model('user_model');
+        $post_input = $this->input->post();
+        $starting_date = date("Y-m-d");
+        $data = array(
+            'name' => $post_input['name'],
+            'email' => $post_input['email'],
+            'password' => $post_input['password'],
+            'starting_balance' => $post_input['cash_in_hand'] + $post_input['cash_in_bank'],
+<<<<<<< HEAD
+            'starting_date' => $starting_date,
+=======
+            'starting_date' => $post_input['starting_date'],
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+            'cash_in_hand' => $post_input['cash_in_hand'],
+            'cash_in_bank' => $post_input['cash_in_bank']
+        );
+        $name=$post_input['name'];
+        $email=$post_input['email'];
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+        $nameErr = "Only letters and white space allowed"; 
+        }
+        
+        if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$email)) {
+        $emailErr = "Invalid email format"; 
+        }
+        if($nameErr!="" || $emailErr!="")
+        {
+            echo $nameErr;
+            echo "<br>";
+            echo $emailErr;
+            $this->load->view('register_view');
+        }
+ else {
+        
+        $response = $this->user_model->verify_registration($data);
+
+        if (!$response) {
+            $this->user_model->insert($data);
+            $this->load->view('register_successful', $data);
+        } else
+            $this->load->view("register_fail");
+ 
+                
+      
+      }
+    }
+
+    public function logout() {
+        session_destroy();
+        $url = base_url('home/index');
+        header("Location:$url");
+    }
+
+    public function update() {
+        $this->load->model('user_model');
+        $data = $this->user_model->update($password, $user_id);
+    }
+
+}
+

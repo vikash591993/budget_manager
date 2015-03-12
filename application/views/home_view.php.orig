@@ -1,0 +1,174 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Result</title>
+
+
+
+    </head>
+    <body>
+        <h1>welcome <?php echo $name; ?></h1>
+
+        <div class="container-fluid">  
+            <ul id="budget_tabs" class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#section1">monthly</a></li>
+                <li><a data-toggle="tab" href="#section2">yearly</a></li>
+                <li><a data-toggle="tab" href="#section3">all time</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="section1" class="tab-pane active">
+
+                    <?php
+                    if (isset($monthly_sum)) {
+                        echo "<h3>Last one month:&nbsp" . $monthly_sum . "</h3>";
+                    } else {
+<<<<<<< HEAD
+                        echo "<h2>you dont have any transactions</h2>";
+                    }
+                    ?>
+                </div> 
+                <div id="section2" class="tab-pane fade">
+
+                    <?php
+                    if (isset($yearly_sum)) {
+                        echo "<h3>Last one year:" . $yearly_sum . "</h3>";
+                    } else {
+                        echo "<h2>you dont have any transactions</h2>";
+                    }
+                    ?>
+=======
+                        echo "<h2>you dont have any transactions</h2>";
+                    }
+                    ?>
+                </div> 
+                <div id="section2" class="tab-pane fade">
+
+<?php
+if (isset($yearly_sum)) {
+    echo "<h3>Last one year:" . $yearly_sum . "</h3>";
+} else {
+    echo "<h2>you dont have any transactions</h2>";
+}
+?>
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+                </div>
+                <div id="section3" class="tab-pane fade">
+                    <?php
+                    if (isset($total_expense)) {
+                        echo "<h3>Your total expense:" . $total_expense . "</h3>";
+                    } else {
+                        echo "<h2>You have to spent some money for it!!!!</h2>";
+                    }
+                    ?>
+                </div>
+            </div>
+<<<<<<< HEAD
+            <?php
+            if ($flag == 0) {
+                echo "<div style='alignment-adjust: central; color: green;'>";
+                echo "<progress id='progressbar'color='green' align='center' value='0' max='100' style='width: 500px; height: 30px; position: relative; overflow: hidden; color: green; background-color: green;'></progress>
+                    <span id='status'></span> 
+
+                    <div id='piechart' style='width: 500px; height: 500px;'></div>
+      
+                    </div>
+                    </div>";
+            } else {
+                echo "<h2>you are having negative balance</h2>";
+            }
+            ?>
+
+            <script type="text/javascript" language="javascript">
+
+                function progressBarSim(al) {
+                    var bar = document.getElementById('progressbar');
+                    var status = document.getElementById('status');
+
+                    bar.value =<?php echo $progress_value; ?>;
+                    al =<?php echo $progress_value; ?>;
+                    status.innerHTML = al + '%';
+                }
+                var amountLoaded = 0;
+                progressBarSim(amountLoaded);
+
+                //if((<?php //echo $cash_in_bank;   ?>) < 0) || (<?php //echo $cash_in_hand;   ?> < 0))
+                // {
+                //   <?php //echo "<h2>you are having negative balance</h2>";  ?>
+                // }
+                //else
+                //{
+                google.load("visualization", "1", {packages: ["corechart"]});
+                google.setOnLoadCallback(drawChart);
+
+                function drawChart()
+                {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Total Balance', 'Balance Left'],
+                        ['cash_in_bank', <?php echo $cash_in_bank; ?>],
+                        ['cash_in_hand', <?php echo $cash_in_hand; ?>]
+                    ]);
+
+                    var options = {
+                        title: 'Money Status',
+                        is3D: true,
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+
+                }
+                //}
+
+
+            </script> 
+=======
+
+            <div style="alignment-adjust: central">
+                <progress id="progressbar" align="center" value="0" max="100" style="width: 500px; height: 30px; position: relative; overflow: hidden; color: green;"></progress>
+                <span id="status"></span> 
+
+                <div id="piechart" style="width: 500px; height: 500px;"></div>
+
+            </div>
+        </div>    
+        <script type="text/javascript" language="javascript">
+
+            function progressBarSim(al) {
+                var bar = document.getElementById('progressbar');
+                var status = document.getElementById('status');
+
+                bar.value =<?php echo $progress_value; ?>;
+                al =<?php echo $progress_value; ?>;
+                status.innerHTML = al + '%';
+            }
+            var amountLoaded = 0;
+            progressBarSim(amountLoaded);
+
+            google.load("visualization", "1", {packages: ["corechart"]});
+            google.setOnLoadCallback(drawChart);
+
+            function drawChart()
+            {
+                var data = google.visualization.arrayToDataTable([
+                    ['Total Balance', 'Balance Left'],
+                    ['cash_in_bank', <?php echo $cash_in_bank; ?>],
+                    ['cash_in_hand', <?php echo $cash_in_hand; ?>]
+                ]);
+
+                var options = {
+                    title: 'Money Status',
+                    is3D: true,
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+
+            }
+
+
+        </script> 
+>>>>>>> c8b819913277765e6e9d7ad6f2e9b5b554066a97
+    </body>
+</html>

@@ -3,7 +3,7 @@
     <title>login</title>
     <link rel="icon" type="image/png" href="<?php echo base_url('../static/images/icon.png'); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('../static/css/bootstrap.min.css'); ?>" type="text/css" />
-
+    <link rel="stylesheet" href="<?php echo base_url('../static/css/bootstrap.css'); ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url('../static/css/grayscale.css'); ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url('../static/css/font-awesome.min.css'); ?>"  />
 
@@ -36,8 +36,6 @@
 
             </ul>
         </div>
-        <!-- navbar-collapse -->
-
         <!-- /.container -->
     </nav>
 
@@ -66,7 +64,7 @@
                             <div class="item">
                                 <img style="opacity: 0.5" class="carousel-item" src=<?php echo base_url('../static/images/money2.jpg'); ?> />
                                 <div class="carousel-caption">
-                                    <h1 style="font-family: 'play',sans-serif;color: white";>Why Budget<span style="color: goldenrod;">Manager?</span></h1>
+                                    <h1 style="font-family: sans-serif; color: white">Why Budget<span style="color: goldenrod;">Manager?</span></h1>
 
                                     <h3 style="color: white;font-family: 'play',sans-serif;"><span style="text-decoration: underline;"><span style="color: white">Budget</span><span style="color: goldenrod;">Manager</span> </span> makes  finance  easy.  We  do  not  over complicate  things.  We have created  a  fast , secure,  and  simple  environment  for  an  exceptional  budgeting  experience.    We  guarantee  you  will  save  money  and  understand  your  finances  better  within  the  first  hour  of  using  <span style="text-decoration: underline;">Budget<span style="color: goldenrod;"> Manager.</span></span> </h3>
 
@@ -91,35 +89,35 @@
 
                 <h1>  Sign Up...</h1>
                 <hr>
-                <form id="register_form" style="margin-left:240px;" class="form-horizontal"  >
+                <form id="register_form" style="margin-left:240px;" class="form-horizontal">
                     <div class="form-group">
                         <label class="col-sm-1 control-label"><span class="glyphicon glyphicon-user"></span></label>
                         <div class="col-sm-5">
-                            <input type="text" name="name" class="form-control" placeholder="username" />
+                            <input type="text" name="name" class="form-control" placeholder="username" required/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label"><span class="glyphicon glyphicon-envelope"></span></label>
                         <div class="col-sm-5">
-                            <input type="text" name="email" class="form-control" placeholder="Email Id" />
+                            <input type="text" name="email" class="form-control" placeholder="Email Id" required/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label"><span class="glyphicon glyphicon-lock "></span></label>
                         <div class="col-sm-5">
-                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            <input type="password" name="password" class="form-control" placeholder="Password" required/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label"><span class="glyphicon glyphicon-hand-up"></span></label>
                         <div class="col-sm-5">
-                            <input type="number" step="any" name="cash_in_hand" class="form-control" placeholder="Cash In Hand"/>
+                            <input type="number" step="any" name="cash_in_hand" class="form-control" placeholder="Cash In Hand" required/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label"><span class="glyphicon glyphicon-briefcase"></span></label>
                         <div class="col-sm-5">
-                            <input type="number" step="any" name="cash_in_bank" class="form-control" placeholder="Cash In Bank" />
+                            <input type="number" step="any" name="cash_in_bank" class="form-control" placeholder="Cash In Bank" required/>
                         </div>
                     </div>
 
@@ -169,17 +167,15 @@
     <script src="<?php echo base_url('../static/js/jquery.validate.js'); ?>" > </script>
     <script src="<?php echo base_url('../static/js/bootstrap.min.js'); ?>" ></script>
     <script  src="<?php echo base_url('../static/js/grayscale.js'); ?>" ></script>
+    <script type="text/javascript" src="<?php echo base_url('../static/js/jquery.validate.min.js'); ?>"></script>
     <script>
         var register_submit_url = "<?php echo base_url('home/register_submit'); ?>";
-        var login_url = "<?php echo base_url('home#login'); ?> ";
+        var login_url = "<?php echo base_url('home'); ?> ";
         var login_submit_url = "<?php echo base_url('home/login_submit'); ?>";
         var home_url = "<?php echo base_url('home'); ?>";
     </script>
-    
     <script src="<?php echo base_url('../static/js/register.js'); ?>" ></script>
     <script src="<?php echo base_url('../static/js/login.js'); ?>" ></script>
-</body>
-</html>
-
+    
 </body>
 </html>

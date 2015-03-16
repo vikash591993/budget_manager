@@ -81,13 +81,12 @@ class Home extends CI_Controller {
             echo json_encode($data);
             exit();
         }
-
-        $user_id = $login_submit_response->id;
+        //var_dump($login_submit_response);
+        $user_id = $login_submit_response[0]->id;
         $_SESSION['user_id'] = $user_id;
         $data = new stdClass();
         $data->success = true;
         echo json_encode($data);
-        exit();
     }
 
     public function register() {
@@ -183,3 +182,4 @@ class Home extends CI_Controller {
     }
 
 }
+?>

@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#login_form').submit(function(){
         var data  = $('#login_form').serialize() ;
-        console.log('login');
         $.ajax(login_submit_url , {
             data : data ,
             type : "POST" ,
